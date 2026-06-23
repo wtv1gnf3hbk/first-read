@@ -50,18 +50,30 @@ elsewhere are real truncation, not a parser miss.
 
 ## Re-scoped Tier 1 (proposed — Adam decides per outlet)
 
-- **Quotable (full body):** BBC. Presumed-quotable but **untested**, recommend a second
-  spike pass: NYT, Reuters, AP, NPR, ProPublica, Axios, Politico, Semafor, Rest of World,
-  The Verge, Ars Technica, Wired, STAT, Quanta, Atlantic, New Yorker. (NYT is metered —
-  worth confirming it isn't teaser-truncated like FT.)
+- **Quotable (full body):** BBC (tested) + NYT (via nyt-mcp, see below). Presumed-
+  quotable but **untested via Zyte**, recommend a second spike pass: Reuters, AP, NPR,
+  ProPublica, Axios, Politico, Semafor, Rest of World, The Verge, Ars Technica, Wired,
+  STAT, Quanta, Atlantic, New Yorker.
 - **Headline-only (clustering/ranking only, never quoted):** FT, WSJ, Bloomberg,
   Economist, WaPo, Haaretz, The Information.
-- **Needs a non-Zyte path or drop:** The Guardian (Zyte-forbidden).
+- **Headline-only (Zyte-forbidden, decided 2026-06-23):** The Guardian. Stays in for
+  clustering/ranking via headline feed; never quoted. No special non-Zyte body path.
 - **Re-test:** Nikkei (asset-URL false match this run).
+
+### NYT — sourced via nyt-mcp, not Zyte (decided 2026-06-23)
+
+NYT body text comes from the **nyt-bigquery MCP** (`htmlBody` from
+`latest_published_versions_of_assets`), not Zyte — so NYT is **fully quotable** and
+exempt from the paywall question entirely. **Architecture caveat:** BigQuery/MCP is
+VPN/in-building only, which conflicts with the design tenet "runs entirely in CI, no
+laptop dependency." Resolve before Phase 1: either (a) a BigQuery service-account path
+that works from GitHub Actions, or (b) accept an on-network fetch step for NYT bodies.
+Flagged, not yet decided.
 
 ## Open items before Phase 1
 
 - Re-run with the tightened asset filter to get a clean Nikkei number + confirm Economist.
-- Probe the *presumed-free* Tier-1 list (esp. NYT) for 451-forbidden and teaser
-  truncation — same script, swap the outlet list.
-- Decide drop-vs-headline-only for the Guardian.
+- Probe the *presumed-free* Tier-1 list for 451-forbidden and teaser truncation — same
+  script, swap the outlet list. (NYT excluded — sourced via nyt-mcp.)
+- Resolve the NYT-via-MCP vs. pure-CI tension (BigQuery needs VPN/in-building).
+- ~~Decide drop-vs-headline-only for the Guardian~~ → **headline-only** (2026-06-23).
