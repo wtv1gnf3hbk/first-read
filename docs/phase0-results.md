@@ -133,6 +133,7 @@ a per-domain config re-test in Phase 1.
   ~12 outlets the generic heuristic mis-read. Don't ship headline-only verdicts for free
   outlets off run-2's generic numbers.
 - Confirm the 4 genuinely-ambiguous metered outlets: SCMP, Science, Spiegel Intl, Atlantic.
-- ~~Resolve NYT-via-MCP vs. pure-CI tension~~ → see **`nyt-sourcing-decision.md`**
-  (Zyte confirmed teaser-only for NYT; decision doc lays out the CI options).
+- ~~Resolve NYT-via-MCP vs. pure-CI tension~~ → **RESOLVED: Option 5 (graceful hybrid),
+  2026-06-23.** NYT headline-only on the CI cron; quoted only on on-network runs; co-
+  covering quotable outlet supplies the quote otherwise. See `nyt-sourcing-decision.md`.
 - ~~Decide drop-vs-headline-only for the Guardian~~ → **headline-only** (2026-06-23).

@@ -1,4 +1,33 @@
-# First Read — NYT body sourcing: CI vs. VPN (decision needed)
+# First Read — NYT body sourcing: CI vs. VPN
+
+**Status: RESOLVED (2026-06-23) — Option 5 (graceful hybrid).**
+
+## Decision
+
+- **Option 1 (BigQuery-from-CI via SA key): NO-GO.** Not attempting the spike.
+- **Chosen: Option 5 — graceful hybrid.** NYT's headline always feeds clustering/ranking
+  (via Zyte). NYT is **quoted only when the run can reach BigQuery**; on the unattended
+  5:25am CI cron it can't, so **NYT is headline-only day-to-day** and a co-covering
+  quotable outlet in the same cluster supplies the verbatim quote. The briefing never
+  blocks on NYT body availability. Full NYT quoting only occurs on a manual on-network run.
+- **Accepted trade-off:** we lose quoting NYT's *own wording* on automated runs. That's
+  fine because clustering means another of the 10 confirmed-quotable outlets (AP, Reuters,
+  Le Monde, BBC, Verge, Ars, Wired, Nature, New Yorker, STAT) carries the quote for an
+  NYT-led story. NYT still drives *what's in the briefing and how it ranks*.
+- **Rejected: Option 3 (self-hosted on-network runner)** — reintroduces the laptop
+  dependency the design exists to avoid. Revisit only if NYT-verbatim fidelity proves
+  essential during burn-in.
+
+### Phase-1 implication
+
+`bodies.js` treats NYT like any headline-only source by default (Zyte headline → cluster),
+and attempts an MCP/BigQuery body fetch **best-effort**: success → NYT quote; failure or
+unreachable → silently fall back to the next quotable cluster member. No hard dependency,
+no fatal gate on NYT body availability.
+
+---
+
+## Original analysis (for the record)
 
 **Status:** open architecture decision. Adam's call. Recommendation below.
 
