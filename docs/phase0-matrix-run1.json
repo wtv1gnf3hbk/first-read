@@ -1,0 +1,421 @@
+{
+  "generatedAt": "2026-06-23T17:47:40.842Z",
+  "thresholds": {
+    "FULL_THRESHOLD": 350,
+    "TEASER_THRESHOLD": 120
+  },
+  "results": [
+    {
+      "id": "ft",
+      "home": "https://www.ft.com/",
+      "articles": [
+        {
+          "url": "https://www.ft.com/content/10623865-5ff4-4357-9293-3c4ec841d1c4",
+          "raw": {
+            "words": 148,
+            "paywallMarker": true
+          },
+          "browser": {
+            "words": 134,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.ft.com/content/b822bb89-a0b5-4e5f-8de3-3e53aa04c4d4",
+          "raw": {
+            "words": 110,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 110,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.ft.com/content/c11d08ed-6668-4678-b829-1d50acbd12d4",
+          "raw": {
+            "words": 631,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 110,
+            "paywallMarker": false
+          }
+        }
+      ],
+      "error": null,
+      "urlsFound": 3,
+      "medianRawWords": 148,
+      "medianBrowserWords": 110,
+      "anyPaywallMarker": true,
+      "verdict": "PARTIAL",
+      "recommendation": "quotable-with-caution (per-article gate)"
+    },
+    {
+      "id": "wsj",
+      "home": "https://www.wsj.com/",
+      "articles": [
+        {
+          "url": "https://www.wsj.com/articles/ceo-pay-2025-d2885ea3",
+          "raw": {
+            "words": 215,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 226,
+            "paywallMarker": true
+          }
+        },
+        {
+          "url": "https://www.wsj.com/articles/ranks-of-the-ultrawealthy-jumped-in-2025-fe98fe37",
+          "raw": {
+            "words": 82,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 82,
+            "paywallMarker": false
+          }
+        }
+      ],
+      "error": null,
+      "urlsFound": 2,
+      "medianRawWords": 215,
+      "medianBrowserWords": 226,
+      "anyPaywallMarker": true,
+      "verdict": "PARTIAL",
+      "recommendation": "quotable-with-caution (per-article gate)"
+    },
+    {
+      "id": "bloomberg",
+      "home": "https://www.bloomberg.com/",
+      "articles": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-06-22/asian-stocks-set-for-gains-as-oil-holds-losses-markets-wrap",
+          "raw": {
+            "words": 98,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 103,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-06-23/dollar-jumps-to-highest-since-november-on-fed-rate-hike-bets",
+          "raw": {
+            "words": 60,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 70,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.bloomberg.com/news/articles/2026-06-23/-looking-over-our-shoulder-traders-are-loading-up-on-vix-calls",
+          "raw": {
+            "words": 68,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 78,
+            "paywallMarker": false
+          }
+        }
+      ],
+      "error": null,
+      "urlsFound": 3,
+      "medianRawWords": 68,
+      "medianBrowserWords": 78,
+      "anyPaywallMarker": false,
+      "verdict": "TEASER",
+      "recommendation": "headline-only"
+    },
+    {
+      "id": "theinformation",
+      "home": "https://www.theinformation.com/",
+      "articles": [
+        {
+          "url": "https://www.theinformation.com/articles/openais-light-balance-sheet-face-hard-look-ipo",
+          "raw": {
+            "words": 0,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 18,
+            "paywallMarker": true
+          }
+        },
+        {
+          "url": "https://www.theinformation.com/articles/ai-customers-lowering-anthropic-openai-bills",
+          "raw": {
+            "words": 0,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 0,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.theinformation.com/articles/ex-doge-employees-raise-225-million-venture-fund-banner-vc",
+          "raw": {
+            "words": 0,
+            "paywallMarker": false
+          },
+          "browser": {
+            "error": "HTTP 521: {\"type\":\"/download/internal-error\",\"title\":\"Internal Downloading Error\",\"status\":521,\"detail\":\"Server encountered a problem while downloading. Check request and"
+          }
+        }
+      ],
+      "error": null,
+      "urlsFound": 3,
+      "medianRawWords": 0,
+      "medianBrowserWords": 0,
+      "anyPaywallMarker": true,
+      "verdict": "FAIL",
+      "recommendation": "headline-only"
+    },
+    {
+      "id": "economist",
+      "home": "https://www.economist.com/",
+      "articles": [
+        {
+          "url": "https://www.economist.com/finance-and-economics/2026/06/22/russias-war-economy-has-problems-but-is-not-about-to-crash",
+          "raw": {
+            "error": "HTTP 520: {\"type\":\"/download/temporary-error\",\"title\":\"Website Ban\",\"status\":520,\"detail\":\"Zyte API could not get a ban-free response in a reasonable time. See https://do"
+          },
+          "browser": {
+            "words": 156,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.economist.com/britain/2026/06/18/ten-years-on-how-the-brexit-vote-changed-britain",
+          "raw": {
+            "words": 202,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 171,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.economist.com/britain/2026/06/22/andy-burnham-may-find-sir-keir-starmer-a-hard-act-to-follow",
+          "raw": {
+            "words": 135,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 135,
+            "paywallMarker": false
+          }
+        }
+      ],
+      "error": null,
+      "urlsFound": 3,
+      "medianRawWords": 135,
+      "medianBrowserWords": 156,
+      "anyPaywallMarker": false,
+      "verdict": "PARTIAL",
+      "recommendation": "quotable-with-caution (per-article gate)"
+    },
+    {
+      "id": "wapo",
+      "home": "https://www.washingtonpost.com/",
+      "articles": [
+        {
+          "url": "https://www.washingtonpost.com/world/2026/06/23/iran-says-no-nuclear-inspections-countering-vance-statement/",
+          "raw": {
+            "words": 52,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 52,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.washingtonpost.com/politics/2026/06/23/supreme-court-says-rastafarian-cant-sue-prison-officials-over-shorn-dreadlocks/",
+          "raw": {
+            "words": 35,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 39,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.washingtonpost.com/politics/2026/06/23/falun-gong-members-cannot-sue-us-tech-giant-supreme-court-says/",
+          "raw": {
+            "words": 33,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 760,
+            "paywallMarker": false
+          }
+        }
+      ],
+      "error": null,
+      "urlsFound": 3,
+      "medianRawWords": 35,
+      "medianBrowserWords": 52,
+      "anyPaywallMarker": false,
+      "verdict": "TEASER",
+      "recommendation": "headline-only"
+    },
+    {
+      "id": "haaretz",
+      "home": "https://www.haaretz.com/",
+      "articles": [
+        {
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-06-23/ty-article-live/palestinian-report-israeli-settlers-raid-village-near-ramallah-damage-vehicles/0000019e-f224-d69e-a39f-f2246ed50000",
+          "raw": {
+            "words": 28,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 28,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.haaretz.com/middle-east-news/iran/2026-06-21/ty-article/.premium/inside-the-real-battle-shaping-irans-postwar-leadership/0000019e-e909-dc8a-afbe-ff7d7f130000",
+          "raw": {
+            "words": 14,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 35,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.haaretz.com/jewish/2026-06-23/ty-article/.premium/israeli-killed-in-montreal-attack-shooter-allegedly-linked-to-incel-ideology/0000019e-f3ae-d0cc-af9e-f7fffc490000",
+          "raw": {
+            "words": 17,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 31,
+            "paywallMarker": false
+          }
+        }
+      ],
+      "error": null,
+      "urlsFound": 3,
+      "medianRawWords": 17,
+      "medianBrowserWords": 31,
+      "anyPaywallMarker": false,
+      "verdict": "TEASER",
+      "recommendation": "headline-only"
+    },
+    {
+      "id": "nikkei",
+      "home": "https://asia.nikkei.com/",
+      "articles": [
+        {
+          "url": "https://asia.nikkei.com/_next/static/css/d2ebaa229214c65b.css",
+          "raw": {
+            "words": 306,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 323,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://asia.nikkei.com/_next/static/css/022818e052a2b37f.css",
+          "raw": {
+            "words": 210,
+            "paywallMarker": true
+          },
+          "browser": {
+            "words": 212,
+            "paywallMarker": true
+          }
+        },
+        {
+          "url": "https://asia.nikkei.com/_next/static/css/ea259357b779b504.css",
+          "raw": {
+            "words": 168,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 169,
+            "paywallMarker": false
+          }
+        }
+      ],
+      "error": null,
+      "urlsFound": 3,
+      "medianRawWords": 210,
+      "medianBrowserWords": 212,
+      "anyPaywallMarker": true,
+      "verdict": "PARTIAL",
+      "recommendation": "quotable-with-caution (per-article gate)"
+    },
+    {
+      "id": "guardian",
+      "home": "https://www.theguardian.com/world",
+      "articles": [],
+      "error": "HTTP 451: {\"blockedDomain\":\"theguardian.com\",\"type\":\"/download/domain-forbidden\",\"title\":\"Domain Forbidden\",\"status\":451,\"detail\":\"Extraction for the domain theguardian.c",
+      "medianRawWords": 0,
+      "medianBrowserWords": 0,
+      "anyPaywallMarker": false,
+      "verdict": "FORBIDDEN",
+      "recommendation": "Zyte refuses domain — needs direct fetch/RSS, drop or headline-only"
+    },
+    {
+      "id": "bbc",
+      "home": "https://www.bbc.com/news",
+      "articles": [
+        {
+          "url": "https://www.bbc.com/news/articles/c79yvw3j114o",
+          "raw": {
+            "words": 971,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 962,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.bbc.com/news/articles/c2eyj7j4evko",
+          "raw": {
+            "words": 573,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 568,
+            "paywallMarker": false
+          }
+        },
+        {
+          "url": "https://www.bbc.com/news/articles/cx247v39r1no",
+          "raw": {
+            "words": 537,
+            "paywallMarker": false
+          },
+          "browser": {
+            "words": 535,
+            "paywallMarker": false
+          }
+        }
+      ],
+      "error": null,
+      "urlsFound": 3,
+      "medianRawWords": 573,
+      "medianBrowserWords": 568,
+      "anyPaywallMarker": false,
+      "verdict": "FULL",
+      "recommendation": "quotable"
+    }
+  ]
+}

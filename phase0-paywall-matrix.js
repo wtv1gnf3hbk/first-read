@@ -37,19 +37,35 @@ const path = require('path');
 
 // The paywall suspects named in the design doc, plus two free controls
 // (guardian, bbc) to prove the extraction pipeline itself works.
+// Run 2 (2026-06-23): the presumed-free Tier-1 list + Nikkei re-test + NYT-via-Zyte
+// data point. `re: null` => use the generic article-link heuristic (the design's
+// "generic-by-default extraction"), so we don't hand-author 24 per-site regexes.
+// (The hard-paywall outlets were settled in run 1 — see phase0-results.md.)
 const OUTLETS = [
-  // --- hard / metered paywalls (the real question) ---
-  { id: 'ft',          home: 'https://www.ft.com/',                 re: /\/content\/[0-9a-f]{8}-[0-9a-f-]+/i },
-  { id: 'wsj',         home: 'https://www.wsj.com/',                re: /\/articles\/[a-z0-9-]{10,}/i },
-  { id: 'bloomberg',   home: 'https://www.bloomberg.com/',          re: /\/news\/articles\/[0-9a-z-]{8,}/i },
-  { id: 'theinformation', home: 'https://www.theinformation.com/',  re: /\/articles\/[a-z0-9-]{10,}/i },
-  { id: 'economist',   home: 'https://www.economist.com/',          re: /\/[a-z-]+\/\d{4}\/\d{2}\/\d{2}\/[a-z0-9-]+/i },
-  { id: 'wapo',        home: 'https://www.washingtonpost.com/',     re: /\/(world|politics|business|technology|opinions)\/\d{4}\/\d{2}\/\d{2}\/[a-z0-9-]+/i },
-  { id: 'haaretz',     home: 'https://www.haaretz.com/',            re: /\.premium-[a-z0-9-]+|\/\d{4}-\d{2}-\d{2}\/[a-z0-9~-]+/i },
-  { id: 'nikkei',      home: 'https://asia.nikkei.com/',            re: /\/[A-Za-z-]+\/[A-Za-z0-9-]{12,}/ },
-  // --- free controls ---
-  { id: 'guardian',    home: 'https://www.theguardian.com/world',   re: /\/\d{4}\/[a-z]{3}\/\d{2}\/[a-z0-9-]+/i },
-  { id: 'bbc',         home: 'https://www.bbc.com/news',            re: /\/news\/articles\/[a-z0-9]{8,}/i },
+  { id: 'nyt',             home: 'https://www.nytimes.com/',            re: null }, // metered — Zyte-fallback data point; primary path is nyt-mcp
+  { id: 'reuters',         home: 'https://www.reuters.com/',            re: null },
+  { id: 'ap',              home: 'https://apnews.com/',                 re: null },
+  { id: 'aljazeera',       home: 'https://www.aljazeera.com/',          re: null },
+  { id: 'nikkei',          home: 'https://asia.nikkei.com/',            re: null }, // re-test (run 1 matched a CSS asset)
+  { id: 'scmp',            home: 'https://www.scmp.com/',               re: null },
+  { id: 'spiegel',         home: 'https://www.spiegel.de/international/',re: null },
+  { id: 'lemonde',         home: 'https://www.lemonde.fr/en/',          re: null },
+  { id: 'kyivindependent', home: 'https://kyivindependent.com/',        re: null },
+  { id: 'semafor',         home: 'https://www.semafor.com/',            re: null },
+  { id: 'restofworld',     home: 'https://restofworld.org/',            re: null },
+  { id: 'politico',        home: 'https://www.politico.com/',           re: null },
+  { id: 'axios',           home: 'https://www.axios.com/',              re: null },
+  { id: 'npr',             home: 'https://www.npr.org/sections/news/',  re: null },
+  { id: 'propublica',      home: 'https://www.propublica.org/',         re: null },
+  { id: 'theverge',        home: 'https://www.theverge.com/',           re: null },
+  { id: 'arstechnica',     home: 'https://arstechnica.com/',            re: null },
+  { id: 'wired',           home: 'https://www.wired.com/',              re: null },
+  { id: 'stat',            home: 'https://www.statnews.com/',           re: null },
+  { id: 'naturenews',      home: 'https://www.nature.com/news',         re: null },
+  { id: 'quanta',          home: 'https://www.quantamagazine.org/',     re: null },
+  { id: 'science',         home: 'https://www.science.org/news',        re: null },
+  { id: 'atlantic',        home: 'https://www.theatlantic.com/',        re: null },
+  { id: 'newyorker',       home: 'https://www.newyorker.com/',          re: null },
 ];
 
 const ARTICLES_PER_OUTLET = 3;
@@ -88,10 +104,30 @@ function zyte(body) {
 
 const wc = (s) => (s ? s.trim().split(/\s+/).filter(Boolean).length : 0);
 
-// Pull up to N article URLs from rendered homepage HTML using the outlet regex.
+// Generic article-link heuristic (used when outlet.re is null): same-host link whose
+// path has a slug-like final segment (≥2 hyphens) or a date path — the shape almost
+// every news article URL takes, across very different CMSes. Errs toward precision so
+// we don't count section/hub pages as "articles."
+function looksLikeArticle(clean, homeHost) {
+  let u;
+  try { u = new URL(clean); } catch { return false; }
+  if (u.host !== homeHost) return false;
+  const p = u.pathname;
+  if (/\/_next\/|\.(css|js|json|png|jpe?g|svg|webp|ico|woff2?|xml|rss|pdf)$/i.test(p)) return false;
+  if (/^\/(tag|tags|topic|topics|category|categories|author|authors|video|videos|live|podcast|podcasts|newsletter|newsletters|about|contact|subscribe|account|search|section|sitemap|page|interactive|graphics|games|crossword|cooking|wirecutter)\b/i.test(p)) return false;
+  const segs = p.split('/').filter(Boolean);
+  if (segs.length < 2) return false;
+  const last = segs[segs.length - 1];
+  const hyphens = (last.match(/-/g) || []).length;
+  const hasDate = /\/\d{4}\/\d{1,2}\//.test(p) || /\d{4}-\d{2}-\d{2}/.test(p);
+  return hyphens >= 2 || (hasDate && last.length > 8) || last.length >= 28;
+}
+
+// Pull up to N article URLs from homepage HTML — outlet.re if provided, else generic.
 function extractArticleUrls(html, outlet, n) {
   const out = [];
   const seen = new Set();
+  const homeHost = new URL(outlet.home).host;
   const hrefRe = /href\s*=\s*["']([^"']+)["']/gi;
   let m;
   while ((m = hrefRe.exec(html)) !== null) {
@@ -100,13 +136,12 @@ function extractArticleUrls(html, outlet, n) {
       try { href = new URL(href, outlet.home).href; } catch { continue; }
     }
     if (!href.startsWith('http')) continue;
-    if (!outlet.re.test(href)) continue;
     const clean = href.split('#')[0].split('?')[0];
     if (seen.has(clean)) continue;
-    // skip static assets (Next.js bundles, css/js/img) — these matched loose regexes
     if (/\/_next\/|\.(css|js|json|png|jpe?g|svg|webp|ico|woff2?)$/i.test(clean)) continue;
-    // skip obvious non-articles
     if (/\/(video|videos|live|podcast|tag|topics?|author|graphics)\//i.test(clean)) continue;
+    const match = outlet.re ? outlet.re.test(clean) : looksLikeArticle(clean, homeHost);
+    if (!match) continue;
     seen.add(clean);
     out.push(clean);
     if (out.length >= n) break;

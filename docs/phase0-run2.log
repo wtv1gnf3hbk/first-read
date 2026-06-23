@@ -1,0 +1,58 @@
+Phase 0: 24 outlets × 3 articles × 2 modes via Zyte...
+
+  nikkei           FULL     raw≈355  browser≈347  (3 urls)
+  scmp             PARTIAL  raw≈186  browser≈186  (3 urls)
+  spiegel          TEASER   raw≈49  browser≈49  (3 urls)
+  aljazeera        TEASER   raw≈39  browser≈76  (3 urls)
+  kyivindependent  FAIL     raw≈0  browser≈0  (0 urls)  ⚠ no article URLs matched on homepage
+  ap               FULL     raw≈1324  browser≈44  (3 urls)
+  semafor          TEASER   raw≈12  browser≈12  (3 urls)
+  nyt              PARTIAL  raw≈304  browser≈260  (3 urls)
+  restofworld      TEASER   raw≈40  browser≈40  (3 urls)
+  lemonde          FULL     raw≈3137  browser≈3137  (3 urls)
+  politico         TEASER   raw≈11  browser≈11  (3 urls)
+  npr              TEASER   raw≈49  browser≈3  (3 urls)
+  propublica       PARTIAL  raw≈181  browser≈187  (3 urls)
+  axios            PARTIAL  raw≈263  browser≈309  (3 urls)
+  theverge         FULL     raw≈2538  browser≈468  (3 urls)
+  arstechnica      FULL     raw≈1150  browser≈1150  (3 urls)
+  quanta           TEASER   raw≈53  browser≈53  (1 urls)
+  wired            FULL     raw≈879  browser≈891  (3 urls)
+  atlantic         FAIL     raw≈0  browser≈0  (0 urls)  ⚠ no article URLs matched on homepage
+  naturenews       FULL     raw≈416  browser≈487  (3 urls)
+  stat             PARTIAL  raw≈430  browser≈369  (3 urls)
+  reuters          PARTIAL  raw≈172  browser≈0  (3 urls)
+  newyorker        FULL     raw≈1524  browser≈1149  (3 urls)
+  science          PARTIAL  raw≈192  browser≈194  (3 urls)
+
+| outlet          | verdict | rawWds | browWds | wall | recommendation |
+|-----------------|---------|--------|---------|------|----------------|
+| nyt             | PARTIAL |    304 |      260 | yes | quotable-with-caution (per-article gate) |
+| reuters         | PARTIAL |    172 |        0 | no  | quotable-with-caution (per-article gate) |
+| ap              | FULL    |   1324 |       44 | no  | quotable |
+| aljazeera       | TEASER  |     39 |       76 | no  | headline-only |
+| nikkei          | FULL    |    355 |      347 | no  | quotable |
+| scmp            | PARTIAL |    186 |      186 | no  | quotable-with-caution (per-article gate) |
+| spiegel         | TEASER  |     49 |       49 | yes | headline-only |
+| lemonde         | FULL    |   3137 |     3137 | no  | quotable |
+| kyivindependent | FAIL    |      0 |        0 | no  | headline-only |
+| semafor         | TEASER  |     12 |       12 | no  | headline-only |
+| restofworld     | TEASER  |     40 |       40 | yes | headline-only |
+| politico        | TEASER  |     11 |       11 | no  | headline-only |
+| axios           | PARTIAL |    263 |      309 | no  | quotable-with-caution (per-article gate) |
+| npr             | TEASER  |     49 |        3 | no  | headline-only |
+| propublica      | PARTIAL |    181 |      187 | yes | quotable-with-caution (per-article gate) |
+| theverge        | FULL    |   2538 |      468 | no  | quotable |
+| arstechnica     | FULL    |   1150 |     1150 | no  | quotable |
+| wired           | FULL    |    879 |      891 | no  | quotable |
+| stat            | PARTIAL |    430 |      369 | yes | quotable-with-caution (per-article gate) |
+| naturenews      | FULL    |    416 |      487 | no  | quotable |
+| quanta          | TEASER  |     53 |       53 | no  | headline-only |
+| science         | PARTIAL |    192 |      194 | yes | quotable-with-caution (per-article gate) |
+| atlantic        | FAIL    |      0 |        0 | no  | headline-only |
+| newyorker       | FULL    |   1524 |     1149 | yes | quotable |
+
+Legend: FULL≥350w · PARTIAL≥120w · TEASER>0w · FAIL=no body. "wall"=paywall marker text seen in extracted body.
+Zyte calls ≈ 152 · 383s
+
+Wrote /Users/adam.pasick/Downloads/first-read/docs/phase0-matrix.json

@@ -70,10 +70,69 @@ laptop dependency." Resolve before Phase 1: either (a) a BigQuery service-accoun
 that works from GitHub Actions, or (b) accept an on-network fetch step for NYT bodies.
 Flagged, not yet decided.
 
+## Run 2 — free / international / longread tier (2026-06-23)
+
+Re-ran the spike across the 23 presumed-quotable Tier-1 outlets (+ Nikkei re-test,
++ NYT-via-Zyte data point), using a **generic article-link heuristic** instead of
+per-site regexes. 152 Zyte calls, 6.4 min. Raw: `phase0-matrix-run2.json`.
+
+| outlet | verdict | raw wds | brow wds | read |
+|---|---|---|---|---|
+| lemonde | FULL | 3137 | 3137 | ✅ quotable |
+| theverge | FULL | 2538 | 468 | ✅ quotable |
+| newyorker | FULL | 1524 | 1149 | ✅ quotable |
+| ap | FULL | 1324 | 44 | ✅ quotable (raw only — browser blocked) |
+| arstechnica | FULL | 1150 | 1150 | ✅ quotable |
+| wired | FULL | 879 | 891 | ✅ quotable |
+| naturenews | FULL | 416 | 487 | ✅ quotable |
+| nikkei | FULL | 355 | 347 | ✅ quotable (run-1 INVALID fixed) |
+| stat | PARTIAL | 430 | 369 | ✅ likely quotable (430w + marker → per-article gate) |
+| **nyt** | PARTIAL | 304 | 260 | ⚠️ **Zyte = teaser, not full — use nyt-mcp (see decision doc)** |
+| axios | PARTIAL | 263 | 309 | ✅ likely quotable (Axios writes short by design) |
+| scmp | PARTIAL | 186 | 186 | ❓ metered — confirm |
+| science | PARTIAL | 192 | 194 | ❓ AAAS metered — confirm |
+| reuters | PARTIAL | 172 | 0 | ❓ **likely extraction miss** (Reuters is free) — re-test w/ config |
+| propublica | PARTIAL | 181 | 187 | ❓ likely extraction miss (free) — re-test |
+| quanta | TEASER | 53 | 53 | ❓ **extraction miss** (Quanta is free) — re-test |
+| spiegel | TEASER | 49 | 49 | ❓ Spiegel Intl has a paywall — confirm |
+| npr | TEASER | 49 | 3 | ❓ **extraction miss** (NPR is free) — re-test |
+| restofworld | TEASER | 40 | 40 | ❓ extraction miss (free) — re-test |
+| aljazeera | TEASER | 39 | 76 | ❓ **extraction miss** (AJ is free) — re-test |
+| semafor | TEASER | 12 | 12 | ❓ extraction miss (free) — re-test |
+| politico | TEASER | 11 | 11 | ❓ **extraction miss** (Politico is free) — re-test |
+| kyivindependent | FAIL | 0 | 0 | ❓ URL regex didn't match its shape — re-test |
+| atlantic | FAIL | 0 | 0 | ❓ paywall or JS-body — confirm |
+
+### What run 2 actually establishes
+
+- **9 outlets confirmed quotable** (FULL, clean bodies): Le Monde EN, The Verge, New
+  Yorker, AP, Ars Technica, Wired, Nature News, Nikkei, + STAT. Plus BBC (run 1). The
+  extractor pulls full bodies whenever the article URL is good — so FULL verdicts are trustworthy.
+- **NYT via Zyte = teaser (~300w), not full.** Clean, decision-relevant result: Zyte is
+  not a viable full-body path for NYT. Full NYT bodies need the MCP/BigQuery path.
+- **The low TEASER/FAIL scores on known-free outlets are NOT paywall findings.** Politico,
+  Semafor, NPR, Al Jazeera, Rest of World, Quanta, Kyiv Independent, Reuters are free —
+  their low counts are my generic heuristic grabbing the wrong link or their body living
+  in `<div>`s not `<p>`s. Reporting them as "headline-only" would be a false conclusion.
+- **Meta-finding:** the generic-by-default extractor is insufficient for ~40% of outlets.
+  This *confirms the design's `extract.js` premise* — per-domain config (URL regex +
+  body selector) is required, not optional. That's Phase-1 work, not a paywall verdict.
+
+### Genuinely ambiguous (real paywall vs. miss — needs per-outlet confirmation)
+
+SCMP, Science (AAAS), Spiegel International, The Atlantic. These are metered/paywalled
+*and* hit by extractor limits, so the spike can't cleanly separate the two. Resolve with
+a per-domain config re-test in Phase 1.
+
 ## Open items before Phase 1
 
-- Re-run with the tightened asset filter to get a clean Nikkei number + confirm Economist.
-- Probe the *presumed-free* Tier-1 list for 451-forbidden and teaser truncation — same
-  script, swap the outlet list. (NYT excluded — sourced via nyt-mcp.)
-- Resolve the NYT-via-MCP vs. pure-CI tension (BigQuery needs VPN/in-building).
+- ~~Re-run with tightened asset filter (clean Nikkei)~~ → **done, Nikkei is FULL/quotable.**
+- ~~Probe the presumed-free Tier-1 list~~ → **done (run 2).** 9 confirmed quotable; the
+  rest need per-domain extractor config before any are called headline-only.
+- **Phase 1 extract.js needs per-domain config** (URL regex + body selector) for the
+  ~12 outlets the generic heuristic mis-read. Don't ship headline-only verdicts for free
+  outlets off run-2's generic numbers.
+- Confirm the 4 genuinely-ambiguous metered outlets: SCMP, Science, Spiegel Intl, Atlantic.
+- ~~Resolve NYT-via-MCP vs. pure-CI tension~~ → see **`nyt-sourcing-decision.md`**
+  (Zyte confirmed teaser-only for NYT; decision doc lays out the CI options).
 - ~~Decide drop-vs-headline-only for the Guardian~~ → **headline-only** (2026-06-23).
