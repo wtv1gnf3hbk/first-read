@@ -1,0 +1,30 @@
+Phase 0: 10 outlets × 3 articles × 2 modes via Zyte...
+
+  bloomberg        TEASER   raw≈68  browser≈78  (3 urls)
+  economist        PARTIAL  raw≈135  browser≈156  (3 urls)
+  ft               PARTIAL  raw≈148  browser≈110  (3 urls)
+  nikkei           PARTIAL  raw≈210  browser≈212  (3 urls)
+  guardian         FORBIDDEN raw≈0  browser≈0  (0 urls)  ⚠ HTTP 451: {"blockedDomain":"theguardian.com","type":"/download/domain-forbidden","title":"Domain Forbidden","status":451,"detail":"Extraction for the domain theguardian.c
+  wsj              PARTIAL  raw≈215  browser≈226  (2 urls)
+  theinformation   FAIL     raw≈0  browser≈0  (3 urls)
+  wapo             TEASER   raw≈35  browser≈52  (3 urls)
+  bbc              FULL     raw≈573  browser≈568  (3 urls)
+  haaretz          TEASER   raw≈17  browser≈31  (3 urls)
+
+| outlet          | verdict | rawWds | browWds | wall | recommendation |
+|-----------------|---------|--------|---------|------|----------------|
+| ft              | PARTIAL |    148 |      110 | yes | quotable-with-caution (per-article gate) |
+| wsj             | PARTIAL |    215 |      226 | yes | quotable-with-caution (per-article gate) |
+| bloomberg       | TEASER  |     68 |       78 | no  | headline-only |
+| theinformation  | FAIL    |      0 |        0 | yes | headline-only |
+| economist       | PARTIAL |    135 |      156 | no  | quotable-with-caution (per-article gate) |
+| wapo            | TEASER  |     35 |       52 | no  | headline-only |
+| haaretz         | TEASER  |     17 |       31 | no  | headline-only |
+| nikkei          | PARTIAL |    210 |      212 | yes | quotable-with-caution (per-article gate) |
+| guardian        | FORBIDDEN |      0 |        0 | no  | Zyte refuses domain — needs direct fetch/RSS, drop or headline-only |
+| bbc             | FULL    |    573 |      568 | no  | quotable |
+
+Legend: FULL≥350w · PARTIAL≥120w · TEASER>0w · FAIL=no body. "wall"=paywall marker text seen in extracted body.
+Zyte calls ≈ 62 · 178s
+
+Wrote /Users/adam.pasick/Downloads/first-read/docs/phase0-matrix.json
