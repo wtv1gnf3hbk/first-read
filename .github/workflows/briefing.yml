@@ -88,12 +88,15 @@ jobs:
           git fetch origin main
           git reset --soft origin/main
 
-          if [ -f .published ]; then
-            if [ -f state/proposed-threads.json ]; then mv state/proposed-threads.json state/threads.json; fi
-            git add index.html briefing.md state/threads.json
+          # Promote staged threads only when the pipeline authorized publishing.
+          if [ -f .published ] && [ -f state/proposed-threads.json ]; then
+            mv state/proposed-threads.json state/threads.json
           fi
-          # The failure/health record + escalation map are committed every run.
-          git add -- last-run-status.json state/zyte-escalation.json 2>/dev/null || true
+          # Stage only files that exist — a missing optional artifact (e.g. no
+          # index.html on a floor-abort) must never abort the status commit.
+          for f in index.html briefing.md last-run-status.json state/threads.json state/zyte-escalation.json; do
+            [ -f "$f" ] && git add "$f"
+          done
 
           git diff --staged --quiet || {
             git commit -m "First Read $(date -u +%Y-%m-%d)"

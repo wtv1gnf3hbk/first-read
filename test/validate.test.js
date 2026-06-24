@@ -86,6 +86,26 @@ test('F4 figure-attribution: a figure not in the cited body is fatal', () => {
   assert.ok(codes(validate(briefing, { bodies, candidates }).errors).includes('F4'));
 });
 
+test('F4 matches the figure NUMBERS, not the whole descriptive phrase (no false positive)', () => {
+  const { briefing, bodies, candidates } = fixtures();
+  // Body has the numbers; the cited phrase adds descriptive words that are not contiguous.
+  bodies.clusters[0].bodies[0].body = 'The card ships with 8GB of dedicated DDR6 VRAM at launch.';
+  briefing.spine[0].citations = [{ outlet: 'ap', figures: ['8GB dedicated DDR6 VRAM'] }];
+  assert.ok(!codes(validate(briefing, { bodies, candidates }).errors).includes('F4'), 'numbers present → no false F4');
+});
+
+test('F4 still fires when a cited figure phrase carries a number absent from the body', () => {
+  const { briefing, bodies, candidates } = fixtures();
+  briefing.spine[0].citations = [{ outlet: 'ap', figures: ['65 percent said the wrong track'] }]; // 65 percent not in AP body
+  assert.ok(codes(validate(briefing, { bodies, candidates }).errors).includes('F4'));
+});
+
+test('F4 ignores a citation figure that contains no number (nothing to verify)', () => {
+  const { briefing, bodies, candidates } = fixtures();
+  briefing.spine[0].citations = [{ outlet: 'ap', figures: ['a major escalation'] }];
+  assert.ok(!codes(validate(briefing, { bodies, candidates }).errors).includes('F4'));
+});
+
 test('F5 same-story-twice: two spine items sharing a link is fatal', () => {
   const { briefing, bodies, candidates } = fixtures();
   briefing.spine.push({ ...briefing.spine[0] });

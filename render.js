@@ -22,6 +22,11 @@ if (degradedIdx !== -1) {
   const reason = args[degradedIdx + 1] || 'validation failed';
   const candidates = read('candidates.json').candidates;
   fs.writeFileSync(path.join(__dirname, 'index.html'), renderDegraded(candidates, reason));
+  // Also emit a degraded briefing.md so the committed artifact set is consistent
+  // with a normal run (the commit step expects both).
+  const md = [`# First Read — degraded`, '', `_could not assemble the briefing: ${reason}_`, '',
+    ...candidates.slice(0, 30).map((c) => `- [${c.title || c.url}](${c.url})`), ''].join('\n');
+  fs.writeFileSync(path.join(__dirname, 'briefing.md'), md);
   console.error(`render: DEGRADED page published (${reason})`);
   process.exit(0);
 }
