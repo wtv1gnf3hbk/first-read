@@ -1,0 +1,39 @@
+{
+  "runAt": "2026-06-24T02:55:52.568Z",
+  "fetch": {
+    "tier1Succeeded": 31,
+    "tier1Total": 33,
+    "voices": 6,
+    "zyte": {
+      "count": 34,
+      "raw": 34,
+      "browser": 0,
+      "estCostUsd": 0.027200000000000002,
+      "hardCap": 150,
+      "warnAt": 100,
+      "overCap": false
+    }
+  },
+  "extract": {
+    "candidateCount": 1876,
+    "yesterdayCount": 0,
+    "zeroSourceFlags": [
+      "guardian",
+      "wsj",
+      "kyivindependent",
+      "quanta",
+      "atlantic",
+      "garbageday"
+    ]
+  },
+  "validation": {
+    "errors": [
+      {
+        "code": "F4",
+        "message": "figure \"12 hours\" (12) attributed to oneusefulthing not found in its body"
+      }
+    ],
+    "warnings": [],
+    "fatal": true
+  }
+}

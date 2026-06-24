@@ -1,1 +1,10 @@
-{}
+{
+  "www.theguardian.com": {
+    "mode": "raw",
+    "rawFailures": 1
+  },
+  "www.wsj.com": {
+    "mode": "raw",
+    "rawFailures": 1
+  }
+}
