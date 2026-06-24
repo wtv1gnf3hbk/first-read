@@ -2,7 +2,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 
-const { callClaudeOnce, callClaude, callHaiku, isRetryable } = require('../lib/claude');
+const { callClaudeOnce, callClaude, callHaiku, isRetryable, extractJson } = require('../lib/claude');
 
 // Fake https.request that replays a SCRIPT of responses (one per call). Each entry
 // is { statusCode, body } or { netError } or { timeout: true }. When the script is
@@ -130,4 +130,19 @@ test('callHaiku targets the haiku model', async () => {
   const text = await callHaiku('p', { apiKey: 'k', request });
   assert.equal(text, 'haiku reply');
   assert.equal(JSON.parse(request.calls[0].payload).model, 'claude-haiku-4-5');
+});
+
+// ------------------------------------------------------------- extractJson
+
+test('extractJson pulls a JSON array embedded in prose', () => {
+  assert.deepEqual(extractJson('Sure! Here are the clusters: [{"id":1},{"id":2}] — done.'), [{ id: 1 }, { id: 2 }]);
+});
+
+test('extractJson pulls a JSON object and tolerates a ```json fence', () => {
+  assert.deepEqual(extractJson('```json\n{"clusters": [1,2,3]}\n```'), { clusters: [1, 2, 3] });
+});
+
+test('extractJson returns null on unparseable model output (graceful skip)', () => {
+  assert.equal(extractJson('I could not produce JSON, sorry.'), null);
+  assert.equal(extractJson(''), null);
 });

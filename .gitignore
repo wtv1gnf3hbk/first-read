@@ -14,3 +14,7 @@ fetch-raw.json
 candidates.json
 clusters.json
 bodies.json
+diff.json
+# Staged next-state of running threads; promoted into state/threads.json (committed)
+# only on a successful publish. The staging file itself is transient.
+state/proposed-threads.json
