@@ -1,0 +1,14 @@
+{
+  "name": "first-read",
+  "version": "0.1.0",
+  "private": true,
+  "description": "First Read — daily layered 5-minute personal news briefing (Zyte-first, novelty-diffed).",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/env.test.js test/zyte.test.js test/claude.test.js test/sources.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {}
+}

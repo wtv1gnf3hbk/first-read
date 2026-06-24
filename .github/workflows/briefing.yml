@@ -1,0 +1,63 @@
+# First Read — daily briefing pipeline.
+#
+# M1 SKELETON: checkout → Node 20 → install → tests. The full stage sequence
+# (fetch → extract → cluster → bodies → diff → write → fix → validate → render)
+# and the transactional commit-back land in Milestone 4. Until the repo is created
+# and Pages enabled (post-M4), this workflow is inert.
+
+name: First Read
+
+on:
+  # ~5:25am EDT. GH cron drift (5-40 min) is accepted in v1 (design §5);
+  # a Cloudflare Worker dispatch is the known upgrade if drift annoys.
+  schedule:
+    - cron: '25 9 * * *'
+  workflow_dispatch:
+
+# Single in-flight run. cancel-in-progress is FALSE on purpose: this pipeline
+# commits state (state/threads.json etc.) transactionally, and cancelling a run
+# mid-commit could corrupt that state. A queued run waits for the publish to finish.
+concurrency:
+  group: first-read-briefing
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  briefing:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      ZYTE_API_KEY: ${{ secrets.ZYTE_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      # --- Milestone 4 fills in the pipeline below ----------------------------
+      # - name: Fetch        => node fetch.js
+      # - name: Extract      => node extract.js
+      # - name: Cluster      => node cluster.js
+      # - name: Bodies       => node bodies.js
+      # - name: Diff         => node diff.js
+      # - name: Write        => node write.js
+      # - name: Fix          => node fix.js
+      # - name: Validate     => node validate.js   (exit 1 fatal -> degraded publish)
+      # - name: Render       => node render.js
+      # - name: Commit & push (transactional: git fetch origin main;
+      #         git reset --soft origin/main; add index.html briefing.md state/*
+      #         last-run-status.json; commit; push)

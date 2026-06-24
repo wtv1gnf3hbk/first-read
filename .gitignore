@@ -1,0 +1,16 @@
+# Ephemeral body/HTML cache (keyed by URL hash) — never committed.
+cache/
+
+# Secrets for local runs. CI gets these from workflow `env:` (GH secrets).
+.env
+
+node_modules/
+
+# Pipeline intermediates written to disk per run. The PUBLISHED artifacts
+# (index.html, briefing.md) and STATE (state/*.json, last-run-status.json)
+# are committed transactionally by the workflow — see briefing.yml. The raw
+# stage dumps below are inspection-only and regenerated every run.
+fetch-raw.json
+candidates.json
+clusters.json
+bodies.json
