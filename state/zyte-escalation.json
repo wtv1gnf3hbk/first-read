@@ -1,10 +1,10 @@
 {
   "www.theguardian.com": {
-    "mode": "raw",
-    "rawFailures": 1
+    "mode": "browser",
+    "rawFailures": 2
   },
   "www.wsj.com": {
-    "mode": "raw",
-    "rawFailures": 1
+    "mode": "browser",
+    "rawFailures": 2
   }
 }

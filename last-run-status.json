@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-06-24T02:55:52.568Z",
+  "runAt": "2026-06-24T12:05:00.438Z",
   "fetch": {
     "tier1Succeeded": 31,
     "tier1Total": 33,
@@ -15,8 +15,8 @@
     }
   },
   "extract": {
-    "candidateCount": 1876,
-    "yesterdayCount": 0,
+    "candidateCount": 1877,
+    "yesterdayCount": 1876,
     "zeroSourceFlags": [
       "guardian",
       "wsj",
@@ -30,10 +30,23 @@
     "errors": [
       {
         "code": "F4",
-        "message": "figure \"12 hours\" (12) attributed to oneusefulthing not found in its body"
+        "message": "figure \"$1,349\" ($1,349) attributed to theverge not found in its body"
+      },
+      {
+        "code": "F4",
+        "message": "figure \"$79\" ($79) attributed to theverge not found in its body"
       }
     ],
-    "warnings": [],
+    "warnings": [
+      {
+        "code": "A4",
+        "message": "development spine item does not lead with its delta (\"Both sides publicly contradict each other on IAEA access and asset control after day-one talks\")"
+      },
+      {
+        "code": "A4",
+        "message": "development spine item does not lead with its delta (\"Valve announces final price and June 29 on-sale date\")"
+      }
+    ],
     "fatal": true
   }
 }
