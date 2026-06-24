@@ -1,22 +1,22 @@
 # First Read — daily briefing pipeline.
 #
-# M1 SKELETON: checkout → Node 20 → install → tests. The full stage sequence
-# (fetch → extract → cluster → bodies → diff → write → fix → validate → render)
-# and the transactional commit-back land in Milestone 4. Until the repo is created
-# and Pages enabled (post-M4), this workflow is inert.
+# fetch → extract → cluster → bodies → diff → write → fix → validate → render,
+# then a transactional commit-back. Fail-soft:
+#   - a min-source floor (fetch/extract exit 2) aborts the publish but still commits
+#     the failure record in last-run-status.json (yesterday's page stays up).
+#   - a fatal validation triggers one writer retry, then a degraded links-only publish
+#     — never a stale page.
 
 name: First Read
 
 on:
-  # ~5:25am EDT. GH cron drift (5-40 min) is accepted in v1 (design §5);
-  # a Cloudflare Worker dispatch is the known upgrade if drift annoys.
+  # ~5:25am EDT. GH cron drift (5-40 min) is accepted in v1 (design §5).
   schedule:
     - cron: '25 9 * * *'
   workflow_dispatch:
 
-# Single in-flight run. cancel-in-progress is FALSE on purpose: this pipeline
-# commits state (state/threads.json etc.) transactionally, and cancelling a run
-# mid-commit could corrupt that state. A queued run waits for the publish to finish.
+# Single in-flight run. cancel-in-progress is FALSE: the pipeline commits state
+# transactionally and cancelling mid-commit could corrupt state/.
 concurrency:
   group: first-read-briefing
   cancel-in-progress: false
@@ -48,16 +48,54 @@ jobs:
       - name: Run tests
         run: npm test
 
-      # --- Milestone 4 fills in the pipeline below ----------------------------
-      # - name: Fetch        => node fetch.js
-      # - name: Extract      => node extract.js
-      # - name: Cluster      => node cluster.js
-      # - name: Bodies       => node bodies.js
-      # - name: Diff         => node diff.js
-      # - name: Write        => node write.js
-      # - name: Fix          => node fix.js
-      # - name: Validate     => node validate.js   (exit 1 fatal -> degraded publish)
-      # - name: Render       => node render.js
-      # - name: Commit & push (transactional: git fetch origin main;
-      #         git reset --soft origin/main; add index.html briefing.md state/*
-      #         last-run-status.json; commit; push)
+      # One pipeline step so the floor-abort / retry / degraded control flow lives in
+      # one place. On success it touches `.published` to authorize the commit step to
+      # publish the briefing + promote state; on a floor abort it exits 0 without it
+      # (status-only commit, yesterday's page preserved).
+      - name: Run pipeline
+        run: |
+          set +e
+          node fetch.js;   if [ $? -eq 2 ]; then echo "::warning::min-source floor — aborting publish"; exit 0; fi
+          node extract.js; if [ $? -eq 2 ]; then echo "::warning::candidate floor — aborting publish"; exit 0; fi
+          node cluster.js || exit 1
+          node bodies.js  || exit 1
+          node diff.js    || exit 1
+
+          node write.js && node fix.js
+          node validate.js; v=$?
+          if [ $v -eq 1 ]; then
+            echo "::warning::Fatal validation — retrying writer once with feedback"
+            export RETRY_FEEDBACK="$(cat validation-errors.txt)"
+            node write.js && node fix.js
+            node validate.js; v=$?
+          fi
+          if [ $v -eq 1 ]; then
+            echo "::warning::Still fatal after retry — publishing degraded page"
+            node render.js --degraded "validation failed after retry"
+          else
+            node render.js
+          fi
+          touch .published
+          exit 0
+
+      # Always commit the run record; publish the briefing + promote threads only when
+      # the pipeline authorized it (.published). Transactional: reset to remote first.
+      - name: Commit and push
+        if: always()
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git fetch origin main
+          git reset --soft origin/main
+
+          if [ -f .published ]; then
+            if [ -f state/proposed-threads.json ]; then mv state/proposed-threads.json state/threads.json; fi
+            git add index.html briefing.md state/threads.json
+          fi
+          # The failure/health record + escalation map are committed every run.
+          git add -- last-run-status.json state/zyte-escalation.json 2>/dev/null || true
+
+          git diff --staged --quiet || {
+            git commit -m "First Read $(date -u +%Y-%m-%d)"
+            git push origin main
+          }

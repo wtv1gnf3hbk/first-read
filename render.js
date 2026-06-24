@@ -1,18 +1,41 @@
 #!/usr/bin/env node
 'use strict';
 /**
- * First Read — stage 9: render.  *** M2 SKELETON ***
+ * First Read — stage 9: render.
  *
- * Renders candidates.json into a real mobile-first index.html via
- * lib/render.renderSkeleton. The full three-layer renderer (+ degraded mode) lands
- * in Milestone 4; this proves the pipeline yields a publishable page end-to-end.
+ * Normal:   node render.js              → index.html + briefing.md from briefing.json.
+ * Degraded: node render.js --degraded "reason"
+ *           → links-only index.html from candidates.json + a banner. Used when
+ *             validation stays fatal after the write retry, so we NEVER leave
+ *             yesterday's page up (design §9). Logic in lib/render.js.
  */
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { renderSkeleton } = require('./lib/render');
+const { renderBriefing, renderDegraded } = require('./lib/render');
 
-const candidates = JSON.parse(fs.readFileSync(path.join(__dirname, 'candidates.json'), 'utf8'));
-const html = renderSkeleton(candidates.candidates, { generatedAt: candidates.generatedAt });
-fs.writeFileSync(path.join(__dirname, 'index.html'), html);
-console.error(`render (skeleton): index.html ← ${candidates.count} candidates (${html.length}b)`);
+const read = (f) => JSON.parse(fs.readFileSync(path.join(__dirname, f), 'utf8'));
+const args = process.argv.slice(2);
+const degradedIdx = args.indexOf('--degraded');
+
+if (degradedIdx !== -1) {
+  const reason = args[degradedIdx + 1] || 'validation failed';
+  const candidates = read('candidates.json').candidates;
+  fs.writeFileSync(path.join(__dirname, 'index.html'), renderDegraded(candidates, reason));
+  console.error(`render: DEGRADED page published (${reason})`);
+  process.exit(0);
+}
+
+const briefing = read('briefing.json');
+const bodies = read('bodies.json');
+fs.writeFileSync(path.join(__dirname, 'index.html'), renderBriefing(briefing, { bodies }));
+
+// briefing.md — committed markdown mirror of the page (design §4 outputs).
+const md = [
+  `# First Read`, '', `_${briefing.generatedAt || ''}_`, '',
+  ...(briefing.spine || []).flatMap((s) => [`**${s.headline}.** ${s.text} [link](${s.link_url})`, '']),
+  ...((briefing.ticker || []).length ? ['## The ticker', '', ...briefing.ticker.map((t) => `- [${t.text}](${t.url})`), ''] : []),
+  ...((briefing.longreads || []).length ? ['## Longreads', '', ...briefing.longreads.map((l) => `- [${l.title}](${l.url}) — ${l.why || ''}`), ''] : []),
+].join('\n');
+fs.writeFileSync(path.join(__dirname, 'briefing.md'), md);
+console.error(`render: index.html + briefing.md (${(briefing.spine || []).length} spine items)`);

@@ -15,6 +15,9 @@ candidates.json
 clusters.json
 bodies.json
 diff.json
+briefing.json
+validation-errors.txt
+.published
 # Staged next-state of running threads; promoted into state/threads.json (committed)
 # only on a successful publish. The staging file itself is transient.
 state/proposed-threads.json
