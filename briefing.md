@@ -1,34 +1,32 @@
-# First Read — degraded
+# First Read
 
-_could not assemble the briefing: validation failed after retry_
+_2026-06-25T12:10:14.046Z_
 
-- [Mamdani Emerges as Kingmaker, Pushing His Slate to a Primary Sweep](https://www.nytimes.com/2026/06/24/nyregion/mamdani-politics-influence.html)
-- [7 Takeaways From New York’s Primaries](https://www.nytimes.com/2026/06/24/nyregion/new-york-primary-takeaways.html)
-- [Victories by Pro-Palestinian Democrats Show the Party’s Shift on Israel](https://www.nytimes.com/2026/06/24/us/politics/democrats-israel-new-york-chevalier-lander-valdez.html)
-- [Schlossberg’s Defeat Dampens Dream of a Renewed Camelot](https://www.nytimes.com/2026/06/23/nyregion/schlossberg-loses-camelot.html)
-- [The Headlines Audio Deadly Heat Wave Grips Europe, Congress Passes Landmark Housing Bill, and More 10 min listen](https://www.nytimes.com/2026/06/24/podcasts/the-headlines/heatwave-europe-congress-housing-bill.html)
-- [Housing Bill Passed by Congress Has Wide Appeal, but It’s No Quick Fix The first housing package in decades will take time to put into effect, testing the patience of families rankled by high prices. 6 min read Philip Cheung for The New York Times](https://www.nytimes.com/2026/06/24/business/housing-package-congress-midterms.html)
-- [U.S.-Iran Talks](https://www.nytimes.com/2026/06/23/world/middleeast/united-states-iran-talks-optimism.html)
-- [What Are the Issues?](https://www.nytimes.com/2026/06/21/world/middleeast/us-iran-negotiations-issues.html)
-- [Lebanon Cease-Fire](https://www.nytimes.com/2026/06/23/world/middleeast/israel-soldiers-lebanon-shooting-hezbollah.html)
-- [Strait of Hormuz](https://www.nytimes.com/2026/06/23/world/middleeast/rubio-strait-of-hormuz-charges-traffic.html)
-- [Iran’s Loyalists Promote a Wider Nationalism, Unveiled Women Included](https://www.nytimes.com/2026/06/24/world/europe/iran-war-regime-nationalism.html)
-- [Trump Is Making Big Claims About the Iran Talks. Iran Keeps Contradicting Him.](https://www.nytimes.com/2026/06/23/us/politics/trump-iran-talks-contradictions.html)
-- [Rubio Seeks to Reassure Persian Gulf Allies on Iran Deal](https://www.nytimes.com/2026/06/24/world/middleeast/middle-east-iran-us-rubio.html)
-- [Senate Votes to Check Trump’s War Powers, Rebuking Him on Iran](https://www.nytimes.com/2026/06/23/us/politics/senate-trump-war-powers-iran.html)
-- [Trump’s Stock Trades](https://www.nytimes.com/2026/06/19/us/politics/inside-trumps-stock-trading-surge.html)
-- [Rifts in G.O.P.](https://www.nytimes.com/2026/06/17/us/politics/trump-iran-deal-republicans-criticism.html)
-- [Trump’s Pick for Top I.R.S. Lawyer Works at Firm That Represents Him](https://www.nytimes.com/2026/06/23/us/politics/trump-top-irs-lawyer.html)
-- [Trump to Meet With G.O.P. Senators Amid New Divisions](https://www.nytimes.com/2026/06/24/us/politics/trump-senate-republicans-meeting.html)
-- [Alibaba Sues Pentagon Over China Military Label](https://www.nytimes.com/2026/06/24/business/alibaba-pentagon-lawsuit.html)
-- [Doug Mills/The New York Times Trump Blames Vandals for Reflecting Pool Problems. Records Tell Another Story. The internal documents do not indicate that the peeling blue coating and algae blooms were caused intentionally. 5 min read](https://www.nytimes.com/2026/06/23/us/trump-reflecting-pool-green-peeling.html)
-- [Make Your Picks](https://www.nytimes.com/athletic/7347868/2026/06/10/world-cup-predictions-pickem)
-- [The World Cup Is Still in Thrall to Messi and Ronaldo](https://www.nytimes.com/athletic/7389274/2026/06/24/lionel-messi-cristiano-ronaldo-world-cup-24-hours)
-- [Forecasting the Round of 32 World Cup Bracket](https://www.nytimes.com/athletic/interactive/fifa-mens-world-cup-2026-tracker/group-knockout-bracket-projection)
-- [See the full schedule ›](https://www.nytimes.com/athletic/interactive/fifa-mens-world-cup-2026-tracker/schedule-scores-results)
-- [Heat Exhaustion Symptoms](https://www.nytimes.com/2024/07/17/well/heat-exhaustion-symptoms-treatments.html)
-- [The Heat Wave in Europe Is Hitting Records. Here’s What to Know.](https://www.nytimes.com/2026/06/24/weather/europe-extreme-heat-wave-warning.html)
-- [Windows Are Open and Shoes Are Off, but Class Is Still On in Extreme Heat](https://www.nytimes.com/2026/06/24/world/europe/heat-wave-schools-open-closed-france-uk.html)
-- [The War Forgotten by the World Is an Apocalypse Now](https://www.nytimes.com/2026/06/24/world/asia/myanmar-civil-war-rebels-airstrikes.html)
-- [Myanmar’s Civil War Started With a Coup 5 Years Ago. Here’s the Impact.](https://www.nytimes.com/2026/06/24/world/asia/myanmar-civil-war-explained.html)
-- [Welcome to the Luxury City Built by Taiwan’s A.I. Boom](https://www.nytimes.com/2026/06/24/business/taiwan-chips-boom.html)
+**Twin earthquakes kill at least 164 in Venezuela, level buildings in Caracas.** Back-to-back earthquakes measuring 7.2 and 7.5 magnitude struck northern Venezuela within one minute of each other Wednesday evening, killing at least 164 people and injuring 971, acting President Delcy Rodríguez announced Thursday. Dozens of buildings collapsed in La Guaira. Simón Bolívar International Airport closed after sustaining severe damage. Rodríguez declared a state of emergency and announced a $200 million reconstruction fund. The U.S. State Department mobilized a disaster assistance team and search-and-rescue units. [link](https://www.npr.org/2026/06/24/nx-s1-5869817/2-major-earthquakes-strike-northern-venezuela-near-caracas)
+
+**Trump requests $87.6 billion from Congress, mostly for Iran war costs.** The White House sent Congress an $87.6 billion supplemental spending request, the bulk of it tied to the U.S.-Israel military campaign against Iran. Separately, IAEA Director General Rafael Grossi said Wednesday that inspectors will visit Iranian nuclear enrichment sites under the interim U.S.-Iran deal, while an Iranian diplomat insisted inspections would only follow a final agreement. Israel launched its first airstrike on Lebanon since Saturday's ceasefire took effect, killing two people. [link](https://www.axios.com/2026/06/25/trump-white-house-congress-request-iran-war-us-farmers-ebola)
+
+**Strait of Hormuz remains a near-unsolvable military problem, retired U.S. general warns.** Retired U.S. Air Force Lt. Gen. S. Clinton Hinote, who developed Iran war scenarios under President George W. Bush, told Der Spiegel that convoy escorts cannot guarantee 100-percent protection in the strait's two-mile-wide shipping lanes. He said a single drone or uncharted mine hitting a supertanker could trigger catastrophe. Securing Iranian shorelines would require a large-scale ground operation in a city of more than 500,000 people. Secretary of State Rubio said the U.S. will not accept any nation-state claiming ownership of the strait. [link](https://www.spiegel.de/international/world/u-s-military-expert-on-oil-tanker-convoys-in-the-strait-of-hormuz-iran-must-only-succeed-once-to-trigger-a-catastrophe-a-1b4f4521-01dd-4711-8a5e-8da225d053b5)
+
+**Texas board set to vote Friday on requiring Bible stories for 5.5 million public school students.** The Republican-controlled Texas State Board of Education holds a final vote Friday on a proposal to add Bible passages to required reading lists from kindergarten through high school for the state's 5.5 million public school students. The list draws heavily on the King James Bible and recent evangelical translations. Critics argue the plan violates church-state separation and excludes texts from other religious traditions. If approved, the curriculum takes effect in 2030. [link](https://apnews.com/article/texas-curriculum-bible-board-vote-06530403ff91c10462382422003e109f)
+
+**Dobbs turns four: national abortion count has risen every year since Roe fell.** Four years after the Supreme Court's Dobbs ruling, the total number of abortions in the U.S. has increased each year, driven by telemedicine prescriptions and shield laws allowing clinicians in permissive states to serve patients in states with bans. Texas passed a law allowing private citizens to sue out-of-state prescribers for $100,000. Louisiana scheduled abortion medications as controlled substances and is suing the FDA to end telemedicine access to mifepristone nationally. [link](https://www.npr.org/2026/06/25/nx-s1-5869560/abortion-dobbs-roe-rights-restrictions-anniversary-update)
+
+**OpenAI and Broadcom announce custom chip for large-language-model inference.** OpenAI and Broadcom revealed a jointly designed chip built specifically for running large-language-model inference at scale, marking OpenAI's first publicly disclosed custom silicon partnership. The announcement follows growing industry pressure to reduce dependence on Nvidia hardware for AI workloads. [link](https://arstechnica.com/gadgets/2026/06/openai-and-broadcom-announce-chip-designed-for-llm-inference-at-scale)
+
+**Africa holds less than 1% of global data center capacity as four nations push back on Big Tech dependency.** Nigeria, Egypt, Kenya, and South Africa have each drafted AI strategies identifying dependence on Google, Microsoft, Nvidia, and Meta as a security threat, according to Rest of World. The continent holds less than 1 percent of global data center capacity; its top five markets combined have less capacity than France had in 2024. A $60 billion Africa AI Fund announced at the April 2025 Kigali Summit targets infrastructure including 12,000 Nvidia GPUs for the four nations and Morocco. [link](https://restofworld.org/2026/africa-ai-sovereignty-big-tech)
+
+**Micron blockbuster earnings ignite broader tech sector rebound.** Micron Technology reported stronger-than-expected quarterly earnings, triggering a rally across the broader technology sector. The results signal sustained demand for memory chips tied to AI infrastructure buildout. [link](https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-06-25-2026?mod=hp_lead_pos1)
+
+## The ticker
+
+- [Venezuela airport closed; subway and natural gas service in Caracas suspended after quakes](https://apnews.com/article/venezuela-earthquake-caracas-7179acaee70a9c543f953852f15d4814)
+- [IAEA: Iran enrichment site inspections 'will happen' under MOU; Tehran disputes timing](https://www.npr.org/2026/06/24/g-s1-129770/iran-nuclear-inspection)
+- [Oil prices back to pre-war levels as Hormuz traffic rebounds after partial reopening](https://www.reuters.com/world/middle-east/oil-back-pre-war-levels-hormuz-traffic-rebounds-us-tries-reassure-gulf-allies-2026-06-25)
+- [U.S. Treasury's Bessent says Iran will spend 'very large percent' of unfrozen assets on U.S. foodstuffs](https://www.npr.org/2026/06/24/g-s1-129770/iran-nuclear-inspection)
+- [Israel defense minister says U.S. has not demanded withdrawal from southern Lebanon](https://www.reuters.com/world/europe/israel-stands-firm-troops-southern-lebanon-rubio-seeks-sell-peace-deal-middle-2026-06-24)
+
+## Longreads
+
+- [The Teen Believers in a Christian America](https://www.newyorker.com/magazine/2026/06/29/the-teen-believers-in-a-christian-america) — Deep reporting on the youth movement driving Christian nationalist politics, directly relevant to the Texas Bible curriculum vote.
+- [How Bad an Idea Was Brexit?](https://www.newyorker.com/news/global-notes/how-bad-an-idea-was-brexit) — A rigorous accounting of Brexit's economic and political costs, useful context as Western nations debate trade and sovereignty tradeoffs.

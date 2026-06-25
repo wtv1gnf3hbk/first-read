@@ -1,52 +1,48 @@
 {
-  "runAt": "2026-06-24T12:05:00.438Z",
+  "runAt": "2026-06-25T12:02:05.759Z",
   "fetch": {
-    "tier1Succeeded": 31,
+    "tier1Succeeded": 30,
     "tier1Total": 33,
     "voices": 6,
     "zyte": {
       "count": 34,
-      "raw": 34,
-      "browser": 0,
-      "estCostUsd": 0.027200000000000002,
+      "raw": 32,
+      "browser": 2,
+      "estCostUsd": 0.0356,
       "hardCap": 150,
       "warnAt": 100,
       "overCap": false
     }
   },
   "extract": {
-    "candidateCount": 1877,
-    "yesterdayCount": 1876,
+    "candidateCount": 1791,
+    "yesterdayCount": 1877,
     "zeroSourceFlags": [
       "guardian",
-      "wsj",
       "kyivindependent",
+      "politico",
       "quanta",
+      "science",
       "atlantic",
       "garbageday"
     ]
   },
   "validation": {
-    "errors": [
-      {
-        "code": "F4",
-        "message": "figure \"$1,349\" ($1,349) attributed to theverge not found in its body"
-      },
-      {
-        "code": "F4",
-        "message": "figure \"$79\" ($79) attributed to theverge not found in its body"
-      }
-    ],
+    "errors": [],
     "warnings": [
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Both sides publicly contradict each other on IAEA access and asset control after day-one talks\")"
+        "message": "development spine item does not lead with its delta (\"Formal $87.6B budget request submitted; IAEA inspection standoff sharpens; ceasefire tested by Lebanon strike\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Valve announces final price and June 29 on-sale date\")"
+        "message": "development spine item does not lead with its delta (\"Detailed military assessment of Hormuz convoy risks published; Rubio statement on strait sovereignty\")"
+      },
+      {
+        "code": "A4",
+        "message": "rehash spine item does not lead with its delta (\"Four-year anniversary review; Louisiana FDA lawsuit advancing toward Supreme Court\")"
       }
     ],
-    "fatal": true
+    "fatal": false
   }
 }
