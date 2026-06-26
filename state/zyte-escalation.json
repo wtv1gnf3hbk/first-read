@@ -8,12 +8,12 @@
     "rawFailures": 2
   },
   "www.politico.com": {
-    "mode": "raw",
-    "rawFailures": 1
+    "mode": "browser",
+    "rawFailures": 2
   },
   "www.science.org": {
-    "mode": "raw",
-    "rawFailures": 1
+    "mode": "browser",
+    "rawFailures": 2
   },
   "www.axios.com": {
     "mode": "raw",

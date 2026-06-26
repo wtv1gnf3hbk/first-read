@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-06-25T12:02:05.759Z",
+  "runAt": "2026-06-26T10:32:24.531Z",
   "fetch": {
     "tier1Succeeded": 30,
     "tier1Total": 33,
@@ -15,8 +15,8 @@
     }
   },
   "extract": {
-    "candidateCount": 1791,
-    "yesterdayCount": 1877,
+    "candidateCount": 1807,
+    "yesterdayCount": 1791,
     "zeroSourceFlags": [
       "guardian",
       "kyivindependent",
@@ -32,15 +32,15 @@
     "warnings": [
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Formal $87.6B budget request submitted; IAEA inspection standoff sharpens; ceasefire tested by Lebanon strike\")"
+        "message": "development spine item does not lead with its delta (\"U.S. aid pledge and rescue team deployment announced Thursday\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Detailed military assessment of Hormuz convoy risks published; Rubio statement on strait sovereignty\")"
+        "message": "development spine item does not lead with its delta (\"Overnight refinery strikes and Russian air-defense redeployment reported Thursday\")"
       },
       {
         "code": "A4",
-        "message": "rehash spine item does not lead with its delta (\"Four-year anniversary review; Louisiana FDA lawsuit advancing toward Supreme Court\")"
+        "message": "development spine item does not lead with its delta (\"Scientific context published Thursday\")"
       }
     ],
     "fatal": false
