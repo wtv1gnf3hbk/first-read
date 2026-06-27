@@ -2,10 +2,10 @@
   "threads": [
     {
       "key": "us-israel-war-on-iran",
-      "title": "US-Israel war on Iran",
+      "title": "Israel and Lebanon sign framework agreement",
       "firstSeen": 1782270083974,
-      "lastSeen": 1782470402735,
-      "seenCount": 6
+      "lastSeen": 1782555437463,
+      "seenCount": 10
     },
     {
       "key": "css-724ns2-inline-size-100-block-size-100-css-724ns2-picture",
@@ -18,8 +18,8 @@
       "key": "what-it-feels-like-to-work-with-mythos",
       "title": "What it feels like to work with Mythos",
       "firstSeen": 1782270083974,
-      "lastSeen": 1782470402735,
-      "seenCount": 4
+      "lastSeen": 1782555437463,
+      "seenCount": 6
     },
     {
       "key": "how-brexit-broke-british-politics",
@@ -100,10 +100,10 @@
     },
     {
       "key": "strait-of-hormuz",
-      "title": "Attack in Strait of Hormuz halts evacuation plan for stranded ships",
+      "title": "Iran’s Nournews says explosion heard in Sirik near the Strait of Hormuz, source unclear",
       "firstSeen": 1782270083974,
-      "lastSeen": 1782470402735,
-      "seenCount": 4
+      "lastSeen": 1782555437463,
+      "seenCount": 5
     },
     {
       "key": "ukraine-says-it-hit-a-railway-bridge-to-crimea-seeking-to-is",
@@ -205,10 +205,10 @@
     },
     {
       "key": "openai-and-broadcom-announce-chip-designed-for-llm-inference",
-      "title": "OpenAI and Broadcom announce chip designed for LLM inference at scale",
+      "title": "OpenAI Has New AI Models. Here’s Why You Can’t Use Them",
       "firstSeen": 1782389327211,
-      "lastSeen": 1782389327211,
-      "seenCount": 1
+      "lastSeen": 1782555437463,
+      "seenCount": 2
     },
     {
       "key": "venezuela-back-to-back-quakes-kill-at-least-164-injures-hund",
@@ -240,10 +240,10 @@
     },
     {
       "key": "immigration-hard-liners-had-repeatedly-lost-in-court-before-",
-      "title": "Immigration Hard-Liners Had Repeatedly Lost in Court Before Justices’ Ruling",
+      "title": "As Supreme Court expands Trump's immigration power, experts warn of steeper U.S. population decline",
       "firstSeen": 1782470402735,
-      "lastSeen": 1782470402735,
-      "seenCount": 1
+      "lastSeen": 1782555437463,
+      "seenCount": 2
     },
     {
       "key": "crude-oil-69-33-3-60",
@@ -277,9 +277,44 @@
       "key": "mexico-2-0-full-time-south-africa",
       "title": "Mexico 2 - 0 Full time South Africa",
       "firstSeen": 1782470402735,
-      "lastSeen": 1782470402735,
+      "lastSeen": 1782555437463,
+      "seenCount": 2
+    },
+    {
+      "key": "ai-models-values-are-very-different-from-most-people-s",
+      "title": "→ AI models’ values are very different from most people’s",
+      "firstSeen": 1782555437463,
+      "lastSeen": 1782555437463,
+      "seenCount": 1
+    },
+    {
+      "key": "israel-lebanon-deal",
+      "title": "Israel-Lebanon Deal",
+      "firstSeen": 1782555437463,
+      "lastSeen": 1782555437463,
+      "seenCount": 1
+    },
+    {
+      "key": "survivors-displaced",
+      "title": "Survivors Displaced",
+      "firstSeen": 1782555437463,
+      "lastSeen": 1782555437463,
+      "seenCount": 1
+    },
+    {
+      "key": "buttigieg-was-briefly-separated-from-his-children-after-poli",
+      "title": "Buttigieg was briefly separated from his children after police say he was target of false report",
+      "firstSeen": 1782555437463,
+      "lastSeen": 1782555437463,
+      "seenCount": 1
+    },
+    {
+      "key": "berlin-is-even-worse-equipped-than-paris-for-europe-s-heatwa",
+      "title": "Berlin is even worse equipped than Paris for Europe’s heatwave",
+      "firstSeen": 1782555437463,
+      "lastSeen": 1782555437463,
       "seenCount": 1
     }
   ],
-  "updatedAt": "2026-06-26T10:40:02.735Z"
+  "updatedAt": "2026-06-27T10:17:17.463Z"
 }

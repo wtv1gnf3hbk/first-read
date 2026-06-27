@@ -1,28 +1,26 @@
 {
-  "runAt": "2026-06-26T10:32:24.531Z",
+  "runAt": "2026-06-27T10:08:49.440Z",
   "fetch": {
-    "tier1Succeeded": 30,
+    "tier1Succeeded": 32,
     "tier1Total": 33,
     "voices": 6,
     "zyte": {
       "count": 34,
-      "raw": 32,
-      "browser": 2,
-      "estCostUsd": 0.0356,
+      "raw": 30,
+      "browser": 4,
+      "estCostUsd": 0.044,
       "hardCap": 150,
       "warnAt": 100,
       "overCap": false
     }
   },
   "extract": {
-    "candidateCount": 1807,
-    "yesterdayCount": 1791,
+    "candidateCount": 1923,
+    "yesterdayCount": 1807,
     "zeroSourceFlags": [
       "guardian",
       "kyivindependent",
-      "politico",
       "quanta",
-      "science",
       "atlantic",
       "garbageday"
     ]
@@ -32,15 +30,23 @@
     "warnings": [
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"U.S. aid pledge and rescue team deployment announced Thursday\")"
+        "message": "development spine item does not lead with its delta (\"IRGC confirms retaliatory strikes on U.S. Gulf sites; Bahrain reports Iranian drone attack on its soil\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Overnight refinery strikes and Russian air-defense redeployment reported Thursday\")"
+        "message": "development spine item does not lead with its delta (\"CENTCOM confirms strikes on Iranian missile, drone storage, and radar sites in response to Ever Lovely attack\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Scientific context published Thursday\")"
+        "message": "development spine item does not lead with its delta (\"Administration files Supreme Court petition Friday to resolve appellate split on mandatory ICE detention\")"
+      },
+      {
+        "code": "A4",
+        "message": "development spine item does not lead with its delta (\"Lutnick letter to Anthropic formally permits Mythos 5 access for 100+ approved U.S. organizations\")"
+      },
+      {
+        "code": "A4",
+        "message": "development spine item does not lead with its delta (\"OpenAI publicly confirms government-approval requirement for GPT-5.6 launch\")"
       }
     ],
     "fatal": false
