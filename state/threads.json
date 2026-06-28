@@ -2,10 +2,10 @@
   "threads": [
     {
       "key": "us-israel-war-on-iran",
-      "title": "Israel and Lebanon sign framework agreement",
+      "title": "US military says it struck multiple targets in Iran as ceasefire is strained by 2nd day of attacks",
       "firstSeen": 1782270083974,
-      "lastSeen": 1782555437463,
-      "seenCount": 10
+      "lastSeen": 1782642274610,
+      "seenCount": 13
     },
     {
       "key": "css-724ns2-inline-size-100-block-size-100-css-724ns2-picture",
@@ -18,8 +18,8 @@
       "key": "what-it-feels-like-to-work-with-mythos",
       "title": "What it feels like to work with Mythos",
       "firstSeen": 1782270083974,
-      "lastSeen": 1782555437463,
-      "seenCount": 6
+      "lastSeen": 1782642274610,
+      "seenCount": 8
     },
     {
       "key": "how-brexit-broke-british-politics",
@@ -107,10 +107,10 @@
     },
     {
       "key": "ukraine-says-it-hit-a-railway-bridge-to-crimea-seeking-to-is",
-      "title": "Zelenskyy says Russia is shifting air defenses to Moscow and other key sites after drone strikes",
+      "title": "Ukraine s drones take the war to Russia",
       "firstSeen": 1782302995009,
-      "lastSeen": 1782470402735,
-      "seenCount": 2
+      "lastSeen": 1782642274610,
+      "seenCount": 3
     },
     {
       "key": "life-of-the-mother-how-abortion-bans-lead-to-preventable-dea",
@@ -240,10 +240,10 @@
     },
     {
       "key": "immigration-hard-liners-had-repeatedly-lost-in-court-before-",
-      "title": "As Supreme Court expands Trump's immigration power, experts warn of steeper U.S. population decline",
+      "title": "Trump Taps Former Oklahoma Trooper as New ICE Director",
       "firstSeen": 1782470402735,
-      "lastSeen": 1782555437463,
-      "seenCount": 2
+      "lastSeen": 1782642274610,
+      "seenCount": 3
     },
     {
       "key": "crude-oil-69-33-3-60",
@@ -277,8 +277,8 @@
       "key": "mexico-2-0-full-time-south-africa",
       "title": "Mexico 2 - 0 Full time South Africa",
       "firstSeen": 1782470402735,
-      "lastSeen": 1782555437463,
-      "seenCount": 2
+      "lastSeen": 1782642274610,
+      "seenCount": 3
     },
     {
       "key": "ai-models-values-are-very-different-from-most-people-s",
@@ -291,8 +291,8 @@
       "key": "israel-lebanon-deal",
       "title": "Israel-Lebanon Deal",
       "firstSeen": 1782555437463,
-      "lastSeen": 1782555437463,
-      "seenCount": 1
+      "lastSeen": 1782642274610,
+      "seenCount": 2
     },
     {
       "key": "survivors-displaced",
@@ -314,7 +314,49 @@
       "firstSeen": 1782555437463,
       "lastSeen": 1782555437463,
       "seenCount": 1
+    },
+    {
+      "key": "apple-ratchets-up-prices-blames-the-cost-of-memory",
+      "title": "Apple ratchets up prices, blames the cost of memory",
+      "firstSeen": 1782642274610,
+      "lastSeen": 1782642274610,
+      "seenCount": 1
+    },
+    {
+      "key": "google-caps-meta-s-gemini-use-as-ai-demand-strains-capacity",
+      "title": "Google caps Meta’s Gemini use as AI demand strains capacity",
+      "firstSeen": 1782642274610,
+      "lastSeen": 1782642274610,
+      "seenCount": 1
+    },
+    {
+      "key": "scoop-powerful-anthropic-model-fable-5-on-track-to-return-so",
+      "title": "Scoop: Powerful Anthropic model, Fable 5, on track to return soon",
+      "firstSeen": 1782642274610,
+      "lastSeen": 1782642274610,
+      "seenCount": 1
+    },
+    {
+      "key": "kevin-warsh-invokes-alan-greenspan-to-shrink-the-fed-and-str",
+      "title": "Kevin Warsh Invokes Alan Greenspan to Shrink the Fed—and Strengthen Its Chair",
+      "firstSeen": 1782642274610,
+      "lastSeen": 1782642274610,
+      "seenCount": 1
+    },
+    {
+      "key": "beijing-police-say-pilot-who-crashed-into-china-s-citic-towe",
+      "title": "Beijing police say pilot who crashed into China’s Citic Tower was killed",
+      "firstSeen": 1782642274610,
+      "lastSeen": 1782642274610,
+      "seenCount": 1
+    },
+    {
+      "key": "iran-narrowly-knocked-out-of-tumultuous-world-cup-on-austria",
+      "title": "Iran narrowly knocked out of tumultuous World Cup on Austria's last-second goal",
+      "firstSeen": 1782642274610,
+      "lastSeen": 1782642274610,
+      "seenCount": 1
     }
   ],
-  "updatedAt": "2026-06-27T10:17:17.463Z"
+  "updatedAt": "2026-06-28T10:24:34.610Z"
 }

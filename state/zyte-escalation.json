@@ -18,5 +18,9 @@
   "www.axios.com": {
     "mode": "raw",
     "rawFailures": 0
+  },
+  "www.reuters.com": {
+    "mode": "raw",
+    "rawFailures": 1
   }
 }

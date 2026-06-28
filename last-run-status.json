@@ -1,7 +1,7 @@
 {
-  "runAt": "2026-06-27T10:08:49.440Z",
+  "runAt": "2026-06-28T10:17:57.435Z",
   "fetch": {
-    "tier1Succeeded": 32,
+    "tier1Succeeded": 31,
     "tier1Total": 33,
     "voices": 6,
     "zyte": {
@@ -15,9 +15,10 @@
     }
   },
   "extract": {
-    "candidateCount": 1923,
-    "yesterdayCount": 1807,
+    "candidateCount": 1835,
+    "yesterdayCount": 1923,
     "zeroSourceFlags": [
+      "reuters",
       "guardian",
       "kyivindependent",
       "quanta",
@@ -30,23 +31,23 @@
     "warnings": [
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"IRGC confirms retaliatory strikes on U.S. Gulf sites; Bahrain reports Iranian drone attack on its soil\")"
+        "message": "development spine item does not lead with its delta (\"Kuwait attacked for first time since interim deal; Iran threatens to halt negotiations entirely\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"CENTCOM confirms strikes on Iranian missile, drone storage, and radar sites in response to Ever Lovely attack\")"
+        "message": "development spine item does not lead with its delta (\"Trump issues explicit existential threat to Iran in public post; Araghchi sets 30-day timetable in Baghdad\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Administration files Supreme Court petition Friday to resolve appellate split on mandatory ICE detention\")"
+        "message": "development spine item does not lead with its delta (\"Lutnick letter formally grants partial reinstatement; OpenAI GPT-5.6 also restricted at White House request\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Lutnick letter to Anthropic formally permits Mythos 5 access for 100+ approved U.S. organizations\")"
+        "message": "development spine item does not lead with its delta (\"Volgograd plant struck; Crimea state of emergency declared; largest-ever Moscow-area attack reported\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"OpenAI publicly confirms government-approval requirement for GPT-5.6 launch\")"
+        "message": "development spine item does not lead with its delta (\"Schroyer named as nominee; first confirmed ICE director since Obama era if confirmed\")"
       }
     ],
     "fatal": false
