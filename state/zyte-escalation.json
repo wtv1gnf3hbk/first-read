@@ -20,7 +20,7 @@
     "rawFailures": 0
   },
   "www.reuters.com": {
-    "mode": "raw",
-    "rawFailures": 1
+    "mode": "browser",
+    "rawFailures": 2
   }
 }

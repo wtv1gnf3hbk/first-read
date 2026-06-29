@@ -1,7 +1,7 @@
 {
-  "runAt": "2026-06-28T10:17:57.435Z",
+  "runAt": "2026-06-29T11:08:52.926Z",
   "fetch": {
-    "tier1Succeeded": 31,
+    "tier1Succeeded": 30,
     "tier1Total": 33,
     "voices": 6,
     "zyte": {
@@ -15,11 +15,12 @@
     }
   },
   "extract": {
-    "candidateCount": 1835,
-    "yesterdayCount": 1923,
+    "candidateCount": 1766,
+    "yesterdayCount": 1835,
     "zeroSourceFlags": [
       "reuters",
       "guardian",
+      "wsj",
       "kyivindependent",
       "quanta",
       "atlantic",
@@ -31,23 +32,15 @@
     "warnings": [
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Kuwait attacked for first time since interim deal; Iran threatens to halt negotiations entirely\")"
+        "message": "development spine item does not lead with its delta (\"Iran struck Bahrain and Kuwait; U.S.-Iran halt-and-talks deal announced\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Trump issues explicit existential threat to Iran in public post; Araghchi sets 30-day timetable in Baghdad\")"
+        "message": "development spine item does not lead with its delta (\"Putin's first public admission of fuel deficit; new refinery strike\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Lutnick letter formally grants partial reinstatement; OpenAI GPT-5.6 also restricted at White House request\")"
-      },
-      {
-        "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Volgograd plant struck; Crimea state of emergency declared; largest-ever Moscow-area attack reported\")"
-      },
-      {
-        "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Schroyer named as nominee; first confirmed ICE director since Obama era if confirmed\")"
+        "message": "development spine item does not lead with its delta (\"Saturday strikes named victims; updated cumulative ceasefire toll\")"
       }
     ],
     "fatal": false
