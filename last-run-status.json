@@ -1,29 +1,27 @@
 {
-  "runAt": "2026-06-29T11:08:52.926Z",
+  "runAt": "2026-06-30T10:37:32.009Z",
   "fetch": {
-    "tier1Succeeded": 30,
+    "tier1Succeeded": 31,
     "tier1Total": 33,
     "voices": 6,
     "zyte": {
       "count": 34,
-      "raw": 30,
-      "browser": 4,
-      "estCostUsd": 0.044,
+      "raw": 29,
+      "browser": 5,
+      "estCostUsd": 0.04820000000000001,
       "hardCap": 150,
       "warnAt": 100,
       "overCap": false
     }
   },
   "extract": {
-    "candidateCount": 1766,
-    "yesterdayCount": 1835,
+    "candidateCount": 1873,
+    "yesterdayCount": 1766,
     "zeroSourceFlags": [
-      "reuters",
       "guardian",
       "wsj",
       "kyivindependent",
       "quanta",
-      "atlantic",
       "garbageday"
     ]
   },
@@ -32,15 +30,23 @@
     "warnings": [
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Iran struck Bahrain and Kuwait; U.S.-Iran halt-and-talks deal announced\")"
+        "message": "development spine item does not lead with its delta (\"Both sides dispatching Qatar delegations while publicly contradicting each other on whether direct US-Iran talks are scheduled\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Putin's first public admission of fuel deficit; new refinery strike\")"
+        "message": "development spine item does not lead with its delta (\"Monday standdown confirmed after Sunday Bahrain/Kuwait strikes and US retaliation\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Saturday strikes named victims; updated cumulative ceasefire toll\")"
+        "message": "development spine item does not lead with its delta (\"Monday aftershock, updated death toll, US response figures and humanitarian pivot confirmed\")"
+      },
+      {
+        "code": "A4",
+        "message": "development spine item does not lead with its delta (\"Survivor accounts and deportee figures confirmed; ICE non-response reported\")"
+      },
+      {
+        "code": "A4",
+        "message": "rehash spine item does not lead with its delta (\"First detailed hands-on evaluation published by a named researcher with specific benchmark tasks\")"
       }
     ],
     "fatal": false
