@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-06-30T10:37:32.009Z",
+  "runAt": "2026-07-01T10:46:03.543Z",
   "fetch": {
     "tier1Succeeded": 31,
     "tier1Total": 33,
@@ -15,8 +15,8 @@
     }
   },
   "extract": {
-    "candidateCount": 1873,
-    "yesterdayCount": 1766,
+    "candidateCount": 1898,
+    "yesterdayCount": 1873,
     "zeroSourceFlags": [
       "guardian",
       "wsj",
@@ -30,23 +30,11 @@
     "warnings": [
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Both sides dispatching Qatar delegations while publicly contradicting each other on whether direct US-Iran talks are scheduled\")"
+        "message": "development spine item does not lead with its delta (\"Envoys physically arrive in Doha; structure confirmed as indirect only\")"
       },
       {
         "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Monday standdown confirmed after Sunday Bahrain/Kuwait strikes and US retaliation\")"
-      },
-      {
-        "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Monday aftershock, updated death toll, US response figures and humanitarian pivot confirmed\")"
-      },
-      {
-        "code": "A4",
-        "message": "development spine item does not lead with its delta (\"Survivor accounts and deportee figures confirmed; ICE non-response reported\")"
-      },
-      {
-        "code": "A4",
-        "message": "rehash spine item does not lead with its delta (\"First detailed hands-on evaluation published by a named researcher with specific benchmark tasks\")"
+        "message": "development spine item does not lead with its delta (\"Fedorov makes direct funding appeal ahead of NATO summit; EPF redirection request filed last week\")"
       }
     ],
     "fatal": false
